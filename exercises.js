@@ -33,7 +33,8 @@ const runningTotal = (arr) => {
 
 // Question 3
 const swap = (str) => {
- 
+ let split = str.split(' ')
+ console.log(str, 'HELLO')
   
 };
  console.log(swap('Four score and seven.'))
@@ -50,7 +51,7 @@ const wordSizes = (str) => {
       obj[str[i].length] = 1
     }
   }
-  console.log(obj)
+  return obj
 };
 
 // console.log(wordSizes('Four score and seven.'))                      // { "3": 1, "4": 1, "5": 1, "6": 1 }
@@ -62,13 +63,14 @@ const union = (arr1,arr2) => {
   let concatedArr = arr1.concat(arr2)
   let results = [...new Set(concatedArr)]
 
-  console.log(results)
+  return results
 };
+
 console.log(union([1, 3, 5], [3, 6, 9]));     // [1, 3, 5, 6, 9]
 console.log(union([2, 2, 2, 2], [10, 5, 2])); // [2, 10, 5]
 
 // Question 6
-const firstRecurring = (str) => {
+const firstRecurring = (string) => {
     for (let i = 0; i < string.length; i++) {
       for (let j = i + 1; j < string.length; j += 1) {
         if (string[i] === string[j]) {
@@ -86,7 +88,7 @@ const showMultiplicativeAverage = (arr) => {
 let newStr = ""
 let intialValue = 1
  let multipliedValue = arr.reduce((accumulator, currentValue) => accumulator * currentValue, intialValue /arr.length)
- return newStr += Math.round(multipliedValue * 1000)/1000
+ return newStr += multipliedValue.toFixed(3)
 };
 console.log(showMultiplicativeAverage([3, 5]));                   // "7.500"
 console.log(showMultiplicativeAverage([2, 5, 7, 11, 13, 17]));    // "28361.667"
